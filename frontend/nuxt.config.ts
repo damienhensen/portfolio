@@ -2,16 +2,25 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: [
-    '@nuxt/content',
-  ],
+  modules: ["@nuxt/content", "@nuxt/fonts"],
   devtools: { enabled: true },
-  compatibilityDate: '2024-04-03',
-  
-  css: ['./app/assets/css/main.css'],
+  compatibilityDate: "2024-04-03",
+
+  css: ["./app/assets/css/main.css"],
   vite: {
-    plugins: [
-      tailwindcss(),
+    plugins: [tailwindcss()],
+  },
+
+  fonts: {
+    families: [
+      {
+        name: "Geist",
+        weights: [400, 500, 600, 700],
+      },
+      {
+        name: "Inter",
+        weights: [400, 500, 600],
+      },
     ],
   },
-})
+});
