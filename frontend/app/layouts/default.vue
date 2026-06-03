@@ -3,7 +3,7 @@
     class="bg-background font-body text-text-muted flex min-h-screen flex-col"
   >
     <Header />
-    <main class="mx-auto w-full max-w-7xl flex-1 py-6">
+    <main class="mx-auto w-full max-w-7xl flex-1 px-4 py-6">
       <slot />
     </main>
     <Footer />

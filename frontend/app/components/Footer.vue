@@ -1,6 +1,8 @@
 <template>
-  <footer class="font-heading border-border border-t px-4 py-6">
-    <div class="mx-auto flex w-full max-w-7xl items-center justify-between">
+  <footer class="font-heading border-border border-t py-6">
+    <div
+      class="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-4 px-4 sm:flex-row"
+    >
       <nuxt-link to="/" class="text-text text-xl font-bold"
         >Damien Hensen.</nuxt-link
       >
