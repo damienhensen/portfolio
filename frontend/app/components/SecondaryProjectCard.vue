@@ -10,22 +10,14 @@
         A full-stack issue reporting platform for reporting public space
         problems, managing issue statuses, and handling user notifications.
       </p>
-      <div class="mb-6 flex gap-2 flex-wrap">
-        <span class="bg-surface border-border rounded border px-3 py-1"
+      <div class="mb-6 flex flex-wrap gap-2">
+        <span class="bg-surface border-border border px-3 py-1"
           >Spring Boot</span
         >
-        <span class="bg-surface border-border rounded border px-3 py-1"
-          >Vue</span
-        >
-        <span class="bg-surface border-border rounded border px-3 py-1"
-          >Docker</span
-        >
-        <span class="bg-surface border-border rounded border px-3 py-1"
-          >MySQL</span
-        >
-        <span class="bg-surface border-border rounded border px-3 py-1"
-          >JWT</span
-        >
+        <span class="bg-surface border-border border px-3 py-1">Vue</span>
+        <span class="bg-surface border-border border px-3 py-1">Docker</span>
+        <span class="bg-surface border-border border px-3 py-1">MySQL</span>
+        <span class="bg-surface border-border border px-3 py-1">JWT</span>
       </div>
       <div class="flex">
         <NuxtLink

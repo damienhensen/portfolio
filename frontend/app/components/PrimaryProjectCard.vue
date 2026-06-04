@@ -1,6 +1,6 @@
 <template>
-  <div class="border-border flex md:flex-row flex-col rounded border">
-    <div class="flex-1 p-8 order-2 md:order-1">
+  <div class="border-border flex flex-col rounded border md:flex-row">
+    <div class="order-2 flex-1 p-8 md:order-1">
       <span class="font-heading text-xs font-medium uppercase"
         >Full-stack Application</span
       >
@@ -9,24 +9,16 @@
         A full-stack issue reporting platform for reporting public space
         problems, managing issue statuses, and handling user notifications.
       </p>
-      <div class="mb-6 flex gap-2 flex-wrap">
-        <span class="bg-surface border-border rounded border px-3 py-1"
+      <div class="mb-6 flex flex-wrap gap-2">
+        <span class="bg-surface border-border border px-3 py-1"
           >Spring Boot</span
         >
-        <span class="bg-surface border-border rounded border px-3 py-1"
-          >Vue</span
-        >
-        <span class="bg-surface border-border rounded border px-3 py-1"
-          >Docker</span
-        >
-        <span class="bg-surface border-border rounded border px-3 py-1"
-          >MySQL</span
-        >
-        <span class="bg-surface border-border rounded border px-3 py-1"
-          >JWT</span
-        >
+        <span class="bg-surface border-border border px-3 py-1">Vue</span>
+        <span class="bg-surface border-border border px-3 py-1">Docker</span>
+        <span class="bg-surface border-border border px-3 py-1">MySQL</span>
+        <span class="bg-surface border-border border px-3 py-1">JWT</span>
       </div>
-      <div class="flex ">
+      <div class="flex">
         <NuxtLink
           to="/"
           class="bg-text text-background border-text block border-2 px-12 py-4 font-medium"
@@ -34,6 +26,6 @@
         >
       </div>
     </div>
-    <div class="bg-surface h-60 md:w-9/20 md:h-auto order-1 md:order-2"></div>
+    <div class="bg-surface order-1 h-60 md:order-2 md:h-auto md:w-9/20"></div>
   </div>
 </template>
