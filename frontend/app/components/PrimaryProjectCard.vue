@@ -1,5 +1,7 @@
 <template>
-  <div class="border-border flex flex-col rounded border md:flex-row">
+  <div
+    class="border-border bg-surface flex flex-col rounded border md:flex-row"
+  >
     <div class="order-2 flex-1 p-8 md:order-1">
       <span class="font-heading text-xs font-medium uppercase"
         >Full-stack Application</span
@@ -20,12 +22,14 @@
       </div>
       <div class="flex">
         <NuxtLink
-          to="/"
+          to="/projects/project"
           class="bg-text text-background border-text block border-2 px-12 py-4 font-medium"
           >View Details</NuxtLink
         >
       </div>
     </div>
-    <div class="bg-surface order-1 h-60 md:order-2 md:h-auto md:w-9/20"></div>
+    <div
+      class="bg-background order-1 h-60 md:order-2 md:h-auto md:w-9/20"
+    ></div>
   </div>
 </template>

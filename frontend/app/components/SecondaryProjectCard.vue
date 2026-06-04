@@ -1,6 +1,6 @@
 <template>
-  <div class="border-border flex flex-col rounded border">
-    <div class="bg-surface h-60"></div>
+  <div class="border-border bg-surface flex flex-col rounded border">
+    <div class="bg-background h-60"></div>
     <div class="p-8">
       <span class="font-heading text-xs font-medium uppercase"
         >Full-stack Application</span
@@ -21,7 +21,7 @@
       </div>
       <div class="flex">
         <NuxtLink
-          to="/"
+          to="/projects/project"
           class="bg-text text-background border-text block border-2 px-12 py-4 font-medium"
           >View Details</NuxtLink
         >
