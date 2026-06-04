@@ -14,7 +14,12 @@
           >LinkedIn</nuxt-link
         >
         <nuxt-link to="/" class="hover:text-text transition">GitHub</nuxt-link>
-        <nuxt-link to="/" class="hover:text-text transition">RSS</nuxt-link>
+        <nuxt-link
+          to="/rss.xml"
+          class="hover:text-text transition"
+          target="_blank"
+          >RSS</nuxt-link
+        >
       </nav>
     </div>
   </footer>

@@ -3,9 +3,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
+    "generate:rss": "tsx scripts/generate-rss.ts",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "build": "npm run generate:rss && nuxt build",
+    "generate": "npm run generate:rss && nuxt generate",
     "preview": "nuxt preview"
   },
   "dependencies": {
@@ -21,7 +22,10 @@
     "vue-router": "^5.0.7"
   },
   "devDependencies": {
+    "fast-glob": "^3.3.3",
+    "gray-matter": "^4.0.3",
     "prettier": "^3.8.3",
-    "prettier-plugin-tailwindcss": "^0.8.0"
+    "prettier-plugin-tailwindcss": "^0.8.0",
+    "tsx": "^4.22.4"
   }
 }

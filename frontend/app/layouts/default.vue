@@ -1,3 +1,16 @@
+<script setup lang="ts">
+useHead({
+  link: [
+    {
+      rel: "alternate",
+      type: "application/rss+xml",
+      title: "Damien Hensen Blog RSS",
+      href: "/rss.xml",
+    },
+  ],
+});
+</script>
+
 <template>
   <div
     class="bg-background font-body text-text-muted flex min-h-screen flex-col"
