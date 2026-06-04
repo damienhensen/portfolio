@@ -1,7 +1,4 @@
-type NavItem = {
-  label: string;
-  to: string;
-};
+import type { NavItem } from "~/types/NavItem";
 
 export const navigation: NavItem[] = [
   { label: "Home", to: "/" },
