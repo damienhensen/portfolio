@@ -18,7 +18,7 @@
 
         <div class="flex flex-col gap-4 text-center uppercase lg:flex-row">
           <NuxtLink
-            to="/"
+            to="/projects"
             class="bg-text text-background border-text border-2 px-12 py-4 font-medium"
             >View Projects</NuxtLink
           >
