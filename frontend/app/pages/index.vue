@@ -8,4 +8,5 @@
     <LatestArticles class="w-1/3" />
   </div>
   <AboutMe />
+  <ContactCTA />
 </template>
