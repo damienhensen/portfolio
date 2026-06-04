@@ -52,7 +52,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="grid py-12 lg:grid-cols-12">
+  <div class="grid py-12 lg:pt-24 lg:grid-cols-12">
     <details class="border-border bg-surface mb-8 border p-4 lg:hidden">
       <summary
         class="text-text font-heading cursor-pointer text-sm font-medium uppercase"
