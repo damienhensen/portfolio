@@ -30,7 +30,7 @@ const experiences: Experience[] = [
 </script>
 
 <template>
-  <section class="my-12">
+  <section class="py-12">
     <h2 class="text-text font-heading mb-4 text-2xl font-bold">Work History</h2>
 
     <div class="flex flex-col">

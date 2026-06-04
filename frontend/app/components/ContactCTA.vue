@@ -1,5 +1,5 @@
 <template>
-  <section class="pt-24 pb-18">
+  <section class="pt-12 pb-24">
     <h2 class="text-text font-heading mb-12 text-center text-5xl font-bold">
       Let's connect.
     </h2>

@@ -1,5 +1,5 @@
 <template>
-  <section class="my-12">
+  <section class="pt-24 pb-12 lg:py-12">
     <div class="flex flex-col gap-4 lg:flex-row justify-between mb-8">
       <div class="flex flex-col">
         <h2 class="text-text font-heading text-2xl font-bold">Featured Work</h2>
