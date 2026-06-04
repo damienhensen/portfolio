@@ -10,10 +10,25 @@ const openMenu = () => {
 const closeMenu = () => {
   open.value = false;
 };
+
+const route = useRoute();
+const isActive = (path: string) => {
+  if (path === "/") {
+    return route.path === "/";
+  }
+
+  console.log(route.path, path, route.path.startsWith(path));
+
+  return route.path.startsWith(path);
+};
+
+const activeClass = "text-text underline underline-offset-8";
 </script>
 
 <template>
-  <header class="font-heading bg-background/90 sticky top-0 z-50 backdrop-blur md:hidden">
+  <header
+    class="font-heading bg-background/90 sticky top-0 z-50 backdrop-blur md:hidden"
+  >
     <div
       class="border-border mx-auto flex w-full max-w-7xl items-center justify-between border-b px-4 py-5"
     >
@@ -84,7 +99,7 @@ const closeMenu = () => {
               :key="navItem.to"
               :to="navItem.to"
               class="hover:text-text transition"
-              active-class="text-text underline underline-offset-8"
+              :class="[isActive(navItem.to) && activeClass]"
               @click="closeMenu"
             >
               {{ navItem.label }}

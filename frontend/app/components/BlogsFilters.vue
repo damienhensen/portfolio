@@ -1,14 +1,44 @@
+<script setup lang="ts">
+const activeTags: Ref<string[]> = ref([]);
+
+const toggleActiveTag = (tag: string) => {
+  const index = activeTags.value.indexOf(tag);
+  if (index != -1) {
+    activeTags.value.splice(index, 1);
+  } else {
+    activeTags.value.push(tag);
+  }
+
+  // TODO: Emit tags?
+};
+
+const { data: posts } = await useAsyncData("blog-posts-all", () =>
+  queryCollection("blog").all(),
+);
+
+const tags = computed(() => {
+  const allTags = posts.value?.flatMap((post) => post.tags ?? []) ?? [];
+
+  return [...new Set(allTags)].sort();
+});
+</script>
+
 <template>
   <section class="pb-6">
     <div class="flex flex-wrap gap-2">
-      <span class="bg-text text-background border-text border px-3 py-1"
-        >All Articles</span
-      >
-      <span class="bg-surface border-border border px-3 py-1">PHP</span>
-      <span class="bg-surface border-border border px-3 py-1">Laravel</span>
-      <span class="bg-surface border-border border px-3 py-1">Java</span>
-      <span class="bg-surface border-border border px-3 py-1">Spring Boot</span>
-      <span class="bg-surface border-border border px-3 py-1">Python</span>
+      <Tag
+        tag="All Articles"
+        :active="tags.length == activeTags.length || activeTags.length == 0"
+        class="cursor-pointer"
+      />
+      <Tag
+        @click="toggleActiveTag(tag)"
+        v-for="tag in tags"
+        :key="tag"
+        :tag="tag"
+        :active="activeTags.includes(tag)"
+        class="cursor-pointer"
+      />
     </div>
   </section>
 </template>

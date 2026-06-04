@@ -1,37 +1,51 @@
+<script setup lang="ts">
+import type { Collections } from "@nuxt/content";
+type BlogCollectionItem = Collections["blog"];
+
+const props = defineProps<{ post: BlogCollectionItem }>();
+
+const formattedDate = computed(() => formatDate(props.post.date));
+
+const readingTime = computed(() =>
+  calculateReadingTime(JSON.stringify(props.post.body)),
+);
+</script>
+
 <template>
   <NuxtLink
-    to="/blog/item"
+    :to="post.path"
     class="border-border bg-surface rounded border p-8 md:rounded-none md:border-0 md:border-t md:bg-transparent md:px-0 md:py-12"
   >
     <article
       class="flex flex-col justify-between gap-4 md:flex-row md:items-start md:gap-12"
     >
       <div class="flex justify-between">
-        <p>Nov 24, 2024</p>
+        <p>{{ formattedDate }}</p>
         <p class="flex items-center gap-1 md:hidden">
           <Icon name="heroicons:clock" />
-          <span>12 min read</span>
+          <span>{{ readingTime }} min read</span>
         </p>
       </div>
       <div class="flex flex-1 flex-col gap-4">
         <h2 class="text-text font-heading text-xl font-medium">
-          Building My Portfolio with Nuxt Content
+          {{ post.title }}
         </h2>
-        <span
-          class="bg-background border-border mr-auto border px-3 py-1 text-xs md:hidden"
-          >Nuxt</span
-        >
+
+        <div class="flex flex-wrap gap-2 md:hidden">
+          <Tag v-for="tag in post.tags" :key="tag" :tag="tag" :tiny="true" />
+        </div>
+
         <p class="line-clamp-3 md:line-clamp-none">
-          A quaint little story on how I made my portfolio using Nuxt Content.
+          {{ post.description }}
         </p>
         <p class="hidden items-center gap-1 md:flex">
           <Icon name="heroicons:clock" />
-          <span class="text-sm">12 min read</span>
+          <span class="text-sm">{{ readingTime }} min read</span>
         </p>
       </div>
-      <span class="bg-background border-border hidden border px-3 py-1 md:block"
-        >Nuxt</span
-      >
+      <div class="hidden flex-wrap gap-2 md:flex">
+        <Tag v-for="tag in post.tags" :key="tag" :tag="tag" />
+      </div>
     </article>
   </NuxtLink>
 </template>

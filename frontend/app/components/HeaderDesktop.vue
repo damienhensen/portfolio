@@ -1,5 +1,18 @@
 <script setup lang="ts">
 import { navigation } from "~/constants/navigation";
+
+const route = useRoute();
+const isActive = (path: string) => {
+  if (path === "/") {
+    return route.path === "/";
+  }
+
+  console.log(route.path, path, route.path.startsWith(path));
+
+  return route.path.startsWith(path);
+};
+
+const activeClass = "text-text underline underline-offset-8";
 </script>
 
 <template>
@@ -18,7 +31,7 @@ import { navigation } from "~/constants/navigation";
           v-for="navItem in navigation"
           :to="navItem.to"
           class="hover:text-text transition"
-          active-class="text-text underline underline-offset-8"
+          :class="[isActive(navItem.to) && activeClass]"
           >{{ navItem.label }}</NuxtLink
         >
 
