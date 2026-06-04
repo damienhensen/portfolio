@@ -3,4 +3,5 @@
   <Facts />
   <FeaturedWork />
   <TechStack />
+  <WorkHistory />
 </template>
