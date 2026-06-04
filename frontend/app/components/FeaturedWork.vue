@@ -1,8 +1,10 @@
 <template>
   <section class="pt-24 pb-12 lg:py-12">
-    <div class="flex flex-col gap-4 lg:flex-row justify-between mb-8">
+    <div class="mb-8 flex flex-col justify-between gap-4 lg:flex-row">
       <div class="flex flex-col">
-        <h2 class="text-text font-heading text-2xl font-bold">Featured Work</h2>
+        <h2 class="text-text font-heading mb-2 text-2xl font-bold">
+          Featured Work
+        </h2>
         <p>Some of the projects I'm most proud of.</p>
       </div>
       <NuxtLink
@@ -14,9 +16,9 @@
 
     <div class="flex flex-col gap-4">
       <PrimaryProjectCard />
-      <div class="grid md:grid-cols-2 gap-4">
-          <SecondaryProjectCard />
-          <SecondaryProjectCard />
+      <div class="grid gap-4 md:grid-cols-2">
+        <SecondaryProjectCard />
+        <SecondaryProjectCard />
       </div>
     </div>
   </section>

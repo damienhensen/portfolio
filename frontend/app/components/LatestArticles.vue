@@ -6,7 +6,7 @@ const { data: posts } = await useAsyncData("latest-posts", () =>
 
 <template>
   <section class="py-12">
-    <h2 class="text-text font-heading mb-4 text-2xl font-bold">
+    <h2 class="text-text font-heading mb-8 text-2xl font-bold">
       Latest Articles
     </h2>
 

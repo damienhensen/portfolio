@@ -31,7 +31,7 @@ const experiences: Experience[] = [
 
 <template>
   <section class="py-12">
-    <h2 class="text-text font-heading mb-4 text-2xl font-bold">Work History</h2>
+    <h2 class="text-text font-heading mb-8 text-2xl font-bold">Work History</h2>
 
     <div class="flex flex-col">
       <ExperienceItem
