@@ -6,7 +6,9 @@
           <p class="font-heading text-xs font-medium uppercase">
             Software Engineer
           </p>
-          <h1 class="text-text font-heading text-2xl font-bold md:text-3xl lg:text-4xl">
+          <h1
+            class="text-text font-heading text-2xl font-bold md:text-3xl lg:text-4xl"
+          >
             Building reliable software from development to deployment.
           </h1>
         </div>
@@ -23,15 +25,13 @@
             >View Projects</NuxtLink
           >
           <NuxtLink
-            to="/"
+            to="/about"
             class="bg-background text-text border-border hover:border-border-hover border-2 px-12 py-4 font-medium transition"
             >About Me</NuxtLink
           >
         </div>
       </div>
-      <div class="flex-1">
-
-      </div>
+      <div class="flex-1"></div>
     </div>
   </section>
 </template>

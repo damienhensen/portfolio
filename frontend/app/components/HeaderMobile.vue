@@ -17,8 +17,6 @@ const isActive = (path: string) => {
     return route.path === "/";
   }
 
-  console.log(route.path, path, route.path.startsWith(path));
-
   return route.path.startsWith(path);
 };
 
