@@ -10,14 +10,22 @@
       <p>&copy; {{ new Date().getFullYear() }} - Damien Hensen</p>
 
       <nav class="flex items-center justify-between gap-4">
-        <nuxt-link to="/" class="hover:text-text transition"
+        <nuxt-link
+          to="https://www.linkedin.com/in/damien-hensen/"
+          target="_blank"
+          class="hover:text-text transition"
           >LinkedIn</nuxt-link
         >
-        <nuxt-link to="/" class="hover:text-text transition">GitHub</nuxt-link>
+        <nuxt-link
+          to="https://github.com/damienhensen"
+          target="_blank"
+          class="hover:text-text transition"
+          >GitHub</nuxt-link
+        >
         <nuxt-link
           to="/rss.xml"
-          class="hover:text-text transition"
           target="_blank"
+          class="hover:text-text transition"
           >RSS</nuxt-link
         >
       </nav>

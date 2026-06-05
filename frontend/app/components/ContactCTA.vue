@@ -7,15 +7,24 @@
     <div
       class="flex flex-col items-center justify-center gap-12 text-lg uppercase sm:flex-row"
     >
-      <NuxtLink to="/" class="hover:text-text flex items-center gap-1"
+      <NuxtLink
+        to="https://github.com/damienhensen"
+        target="_blank"
+        class="hover:text-text flex items-center gap-1"
         ><Icon name="mdi:github" class="text-lg" />
         <span>GitHub</span></NuxtLink
       >
-      <NuxtLink to="/" class="hover:text-text flex items-center gap-1"
+      <NuxtLink
+        to="https://www.linkedin.com/in/damien-hensen/"
+        target="_blank"
+        class="hover:text-text flex items-center gap-1"
         ><Icon name="mdi:linkedin" class="text-lg" />
         <span>LinkedIn</span></NuxtLink
       >
-      <NuxtLink to="/" class="hover:text-text flex items-center gap-1"
+      <NuxtLink
+        to="mailto:damhen80@gmail.com"
+        target="_blank"
+        class="hover:text-text flex items-center gap-1"
         ><Icon name="heroicons-solid:envelope" class="text-lg" />
         <span>E-mail</span></NuxtLink
       >

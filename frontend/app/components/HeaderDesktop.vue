@@ -34,7 +34,8 @@ const activeClass = "text-text underline underline-offset-8";
         >
 
         <NuxtLink
-          to="/"
+          to="https://github.com/damienhensen"
+          target="_blank"
           class="bg-text text-background flex items-center justify-center gap-2 rounded px-5 py-2"
         >
           <Icon name="mdi:github" class="text-lg" />

@@ -35,9 +35,9 @@ const activeClass = "text-text underline underline-offset-8";
       </NuxtLink>
 
       <button
+        @click="openMenu"
         class="text-text cursor-pointer text-2xl"
         aria-label="Open navigation"
-        @click="openMenu"
       >
         <Icon name="heroicons:bars-3" />
       </button>
@@ -52,9 +52,9 @@ const activeClass = "text-text underline underline-offset-8";
       leave-to-class="opacity-0"
     >
       <div
+        @click="closeMenu"
         v-if="open"
         class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm"
-        @click="closeMenu"
       />
     </Transition>
 
@@ -74,17 +74,17 @@ const activeClass = "text-text underline underline-offset-8";
           class="border-border flex shrink-0 items-center justify-between border-b px-4 py-5"
         >
           <NuxtLink
+            @click="closeMenu"
             to="/"
             class="text-text text-xl font-bold"
-            @click="closeMenu"
           >
             Damien Hensen.
           </NuxtLink>
 
           <button
+            @click="closeMenu"
             class="text-text cursor-pointer text-2xl"
             aria-label="Close navigation"
-            @click="closeMenu"
           >
             <Icon name="heroicons:x-mark" />
           </button>
@@ -93,12 +93,12 @@ const activeClass = "text-text underline underline-offset-8";
         <div class="flex-1 overflow-y-auto">
           <nav class="flex flex-col gap-7 px-4 py-5 text-2xl font-semibold">
             <NuxtLink
+              @click="closeMenu"
               v-for="navItem in navigation"
               :key="navItem.to"
               :to="navItem.to"
               class="hover:text-text transition"
               :class="[isActive(navItem.to) && activeClass]"
-              @click="closeMenu"
             >
               {{ navItem.label }}
             </NuxtLink>
@@ -107,9 +107,10 @@ const activeClass = "text-text underline underline-offset-8";
 
         <div class="shrink-0 px-4 py-5">
           <NuxtLink
-            to="/"
-            class="bg-text text-background mt-auto flex items-center justify-center gap-2 rounded px-5 py-3 font-semibold"
             @click="closeMenu"
+            to="https://github.com/damienhensen"
+            target="_blank"
+            class="bg-text text-background mt-auto flex items-center justify-center gap-2 rounded px-5 py-3 font-semibold"
           >
             <Icon name="mdi:github" class="text-lg" />
             GitHub
