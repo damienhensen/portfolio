@@ -26,7 +26,10 @@ const props = defineProps<{ project: ProjectsCollectionItem }>();
               name="heroicons:exclamation-circle"
               class="text-xl text-red-400"
             />
-            {{ problem }}
+
+            <span class="flex-1">
+              {{ problem }}
+            </span>
           </li>
         </ul>
       </div>
@@ -49,7 +52,9 @@ const props = defineProps<{ project: ProjectsCollectionItem }>();
               name="heroicons:check-circle"
               class="text-xl text-green-400"
             />
-            {{ solution }}
+            <span class="flex-1">
+              {{ solution }}
+            </span>
           </li>
         </ul>
       </div>
