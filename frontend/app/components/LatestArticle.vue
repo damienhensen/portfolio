@@ -6,7 +6,7 @@ const props = defineProps<{ post: BlogCollectionItem }>();
 
 const formattedDate = computed(() => formatDate(props.post.date));
 </script>
-u
+
 <template>
   <NuxtLink :to="post.path">
     <article class="flex flex-col gap-2">

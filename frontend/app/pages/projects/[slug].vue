@@ -1,27 +1,32 @@
-<template>
-  <ProjectHero />
-  <ProjectImage />
-  <ProjectProblemAndSolution />
-  <ProjectArchitecture />
-  <ProjectScreenshots :images="screenshots" />
-  <ProjectTechnicalAnalysis />
-  <ProjectLessons />
-  <AboutMe />
-  <ContactCTA />
-</template>
-
 <script setup lang="ts">
-import type { Screenshot } from "~/types/Screenshot";
+const route = useRoute();
 
-const screenshots: Screenshot[] = [
-  {
-    src: "/images/projects/fixmycity/dashboard.png",
-    alt: "FixMyCity dashboard",
-  },
-  { src: "/images/projects/fixmycity/map.png", alt: "FixMyCity map view" },
-  {
-    src: "/images/projects/fixmycity/profile.png",
-    alt: "FixMyCity profile page",
-  },
-];
+const { data: project } = await useAsyncData(() =>
+  queryCollection("projects").path(route.path).first(),
+);
 </script>
+
+<template>
+  <div v-if="project">
+    <ProjectHero :project="project" />
+    <ProjectImage v-if="project.cover" :project="project" />
+    <ProjectProblemAndSolution :project="project" />
+    <ProjectArchitecture
+      v-if="project.architecture || project.code"
+      :project="project"
+    />
+
+    <ProjectScreenshots
+      v-if="project.screenshots?.length"
+      :images="project.screenshots"
+    />
+
+    <ProjectTechnicalAnalysis
+      v-if="project.technicalAnalysis"
+      :project="project"
+    />
+    <ProjectLessons v-if="project.technicalAnalysis" :project="project" />
+    <AboutMe />
+    <ContactCTA />
+  </div>
+</template>

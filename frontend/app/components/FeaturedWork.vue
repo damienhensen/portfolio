@@ -1,3 +1,21 @@
+<script setup lang="ts">
+const { data: projects } = await useAsyncData("projects", () =>
+  queryCollection("projects").all(),
+);
+
+const filteredProjects = computed(() => {
+  return projects.value ?? [];
+});
+
+const featuredProject = computed(() =>
+  filteredProjects.value.find((project) => project.featured),
+);
+
+const normalProjects = computed(() =>
+  filteredProjects.value.filter((project) => !project.featured),
+);
+</script>
+
 <template>
   <section class="pt-24 pb-12 lg:py-12">
     <div class="mb-8 flex flex-col justify-between gap-4 lg:flex-row">
@@ -15,10 +33,12 @@
     </div>
 
     <div class="flex flex-col gap-4">
-      <PrimaryProjectCard />
-      <div class="grid gap-4 md:grid-cols-2">
-        <SecondaryProjectCard />
-        <SecondaryProjectCard />
+      <PrimaryProjectCard v-if="featuredProject" :project="featuredProject" />
+      <div class="grid gap-4 md:grid-cols-2" v-if="normalProjects?.length">
+        <SecondaryProjectCard
+          v-for="project in normalProjects"
+          :project="project"
+        />
       </div>
     </div>
   </section>

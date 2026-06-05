@@ -1,27 +1,36 @@
+<script setup lang="ts">
+import type { Collections } from "@nuxt/content";
+type ProjectsCollectionItem = Collections["projects"];
+
+const props = defineProps<{ project: ProjectsCollectionItem }>();
+</script>
+
 <template>
-  <div class="border-border bg-surface flex flex-col rounded border">
-    <div class="bg-background h-60"></div>
+  <div class="border-border bg-surface flex flex-col rounded border group">
+    <div class="relative h-60 overflow-hidden rounded-t">
+      <div
+        class="absolute inset-0 bg-cover bg-center"
+        :style="{ backgroundImage: `url(${project.cover.src})` }"
+      />
+
+      <div
+        class="bg-background/30 group-hover:bg-background/10 absolute inset-0 transition"
+      />
+    </div>
     <div class="p-8">
-      <span class="font-heading text-xs font-medium uppercase"
-        >Full-stack Application</span
-      >
-      <h3 class="text-text font-heading mb-2 text-2xl font-bold">FixMyCity</h3>
-      <p class="mb-4">
-        A full-stack issue reporting platform for reporting public space
-        problems, managing issue statuses, and handling user notifications.
+      <Tag :tag="project?.type" :tiny="true" />
+      <h3 class="text-text font-heading my-2 text-2xl font-bold">
+        {{ project.title }}
+      </h3>
+      <p class="mb-4 line-clamp-3">
+        {{ project.description }}
       </p>
       <div class="mb-6 flex flex-wrap gap-2">
-        <span class="bg-surface border-border border px-3 py-1"
-          >Spring Boot</span
-        >
-        <span class="bg-surface border-border border px-3 py-1">Vue</span>
-        <span class="bg-surface border-border border px-3 py-1">Docker</span>
-        <span class="bg-surface border-border border px-3 py-1">MySQL</span>
-        <span class="bg-surface border-border border px-3 py-1">JWT</span>
+        <Tag v-for="tag in project?.tags" :key="tag" :tag="tag" />
       </div>
       <div class="flex">
         <NuxtLink
-          to="/projects/project"
+          :to="project.path"
           class="bg-text text-background border-text block border-2 px-12 py-4 font-medium"
           >View Details</NuxtLink
         >
