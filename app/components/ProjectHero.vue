@@ -31,6 +31,7 @@ const props = defineProps<{ project: ProjectsCollectionItem }>();
         <NuxtLink
           v-if="project.demo?.live"
           :to="project.demo.live"
+          target="_blank"
           class="bg-text text-background border-text flex items-center justify-center gap-2 border-2 px-8 py-4 font-medium"
         >
           <Icon name="heroicons:arrow-top-right-on-square" class="text-lg" />
@@ -40,6 +41,7 @@ const props = defineProps<{ project: ProjectsCollectionItem }>();
         <NuxtLink
           v-if="project.demo?.source"
           :to="project.demo.source"
+          target="_blank"
           class="bg-background text-text border-border hover:border-border-hover flex items-center justify-center gap-2 border-2 px-8 py-4 font-medium transition"
         >
           <Icon name="mdi:github" class="text-lg" />
