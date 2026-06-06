@@ -6,7 +6,7 @@ const props = defineProps<{ project: ProjectsCollectionItem }>();
 </script>
 
 <template>
-  <div class="border-border bg-surface flex flex-col rounded border group">
+  <div class="border-border bg-surface group flex flex-col rounded border">
     <div class="relative h-60 overflow-hidden rounded-t">
       <div
         class="absolute inset-0 bg-cover bg-center"
@@ -17,8 +17,8 @@ const props = defineProps<{ project: ProjectsCollectionItem }>();
         class="bg-background/30 group-hover:bg-background/10 absolute inset-0 transition"
       />
     </div>
-    <div class="p-8">
-      <Tag :tag="project?.type" :tiny="true" />
+    <div class="flex flex-1 flex-col p-8">
+      <Tag :tag="project?.type" :tiny="true" class="mr-auto" />
       <h3 class="text-text font-heading my-2 text-2xl font-bold">
         {{ project.title }}
       </h3>
@@ -28,13 +28,12 @@ const props = defineProps<{ project: ProjectsCollectionItem }>();
       <div class="mb-6 flex flex-wrap gap-2">
         <Tag v-for="tag in project?.tags" :key="tag" :tag="tag" />
       </div>
-      <div class="flex">
-        <NuxtLink
-          :to="project.path"
-          class="bg-text text-background border-text block border-2 px-12 py-4 font-medium"
-          >View Details</NuxtLink
-        >
-      </div>
+
+      <NuxtLink
+        :to="project.path"
+        class="bg-text text-background border-text mt-auto mr-auto block border-2 px-12 py-4 font-medium"
+        >View Details</NuxtLink
+      >
     </div>
   </div>
 </template>
