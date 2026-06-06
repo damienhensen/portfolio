@@ -1,6 +1,16 @@
 <script setup lang="ts">
 const route = useRoute();
 
+useHead({
+  link: [
+    {
+      rel: "canonical",
+      href: `https://damienhensen.nl${route.path}`,
+    },
+  ],
+});
+
+// Blog data
 const { data: post } = await useAsyncData(() =>
   queryCollection("blog").path(route.path).first(),
 );
@@ -49,10 +59,46 @@ onMounted(async () => {
 onBeforeUnmount(() => {
   observer?.disconnect();
 });
+
+// SEO
+useSeoMeta({
+  title: `${post.value?.title} | Damien Hensen`,
+  description: post.value?.description,
+  ogTitle: post.value?.title,
+  ogDescription: post.value?.description,
+  ogType: "article",
+  ogUrl: `https://damienhensen.nl${route.path}`,
+  twitterCard: "summary_large_image",
+
+  // TODO: Add these once you have cover images
+  // ogImage: `https://damienhensen.nl${post.value.cover.src}`,
+  // twitterImage: `https://damienhensen.nl${post.value.cover.src}`,
+});
+
+useHead({
+  script: [
+    {
+      type: "application/ld+json",
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: post.value?.title,
+        description: post.value?.description,
+        datePublished: post.value?.date,
+        dateModified: post.value?.updated ?? post.value?.date,
+        author: {
+          "@type": "Person",
+          name: "Damien Hensen",
+        },
+        mainEntityOfPage: `https://damienhensen.nl${route.path}`,
+      }),
+    },
+  ],
+});
 </script>
 
 <template>
-  <div class="grid py-12 lg:pt-24 lg:grid-cols-12">
+  <div class="grid py-12 lg:grid-cols-12 lg:pt-24">
     <details class="border-border bg-surface mb-8 border p-4 lg:hidden">
       <summary
         class="text-text font-heading cursor-pointer text-sm font-medium uppercase"

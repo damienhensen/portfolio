@@ -1,3 +1,26 @@
+<script setup lang="ts">
+useHead({
+  link: [
+    {
+      rel: "canonical",
+      href: `https://damienhensen.nl`,
+    },
+  ],
+});
+
+useSeoMeta({
+  title: "Damien Hensen | Software Engineer",
+  description:
+    "Software engineering student and full-stack developer specializing in Laravel, Nuxt, Docker, Linux, and modern web applications.",
+  ogTitle: "Damien Hensen | Software Engineer",
+  ogDescription:
+    "Portfolio showcasing full-stack projects, technical articles, and software engineering experience.",
+  ogType: "website",
+  ogUrl: "https://damienhensen.nl",
+  twitterCard: "summary_large_image",
+});
+</script>
+
 <template>
   <Hero />
   <Facts />

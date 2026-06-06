@@ -1,9 +1,60 @@
 <script setup lang="ts">
 const route = useRoute();
 
+useHead({
+  link: [
+    {
+      rel: "canonical",
+      href: `https://damienhensen.nl${route.path}`,
+    },
+  ],
+});
+
+// Project data
 const { data: project } = await useAsyncData(() =>
   queryCollection("projects").path(route.path).first(),
 );
+
+// SEO
+useSeoMeta({
+  title: `${project.value?.title} | Damien Hensen`,
+  description: project.value?.description,
+
+  ogTitle: project.value?.title,
+  ogDescription: project.value?.description,
+  ogType: "article",
+  ogUrl: `https://damienhensen.nl${route.path}`,
+  twitterCard: "summary_large_image",
+
+  // Add if every project has a cover
+  ogImage: project.value?.cover?.src
+    ? `https://damienhensen.nl${project.value?.cover.src}`
+    : undefined,
+  twitterImage: project.value?.cover?.src
+    ? `https://damienhensen.nl${project.value?.cover.src}`
+    : undefined,
+});
+
+useHead({
+  script: [
+    {
+      type: "application/ld+json",
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareSourceCode",
+        name: project.value?.title,
+        description: project.value?.description,
+        codeRepository: project.value?.demo?.source,
+        url: `https://damienhensen.nl${route.path}`,
+        author: {
+          "@type": "Person",
+          name: "Damien Hensen",
+        },
+        programmingLanguage: project.value?.tags,
+      }),
+    },
+  ],
+});
 </script>
 
 <template>
