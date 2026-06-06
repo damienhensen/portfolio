@@ -3,6 +3,16 @@ import type { Collections } from "@nuxt/content";
 type ProjectsCollectionItem = Collections["projects"];
 
 const props = defineProps<{ project: ProjectsCollectionItem }>();
+
+const copied = ref(false);
+
+const copyCode = () => {
+  copied.value = true;
+  setTimeout(() => (copied.value = false), 3000);
+  if (!props.project.code?.content) return;
+
+  navigator.clipboard.writeText(props.project.code?.content);
+};
 </script>
 
 <template>
@@ -29,8 +39,12 @@ const props = defineProps<{ project: ProjectsCollectionItem }>();
         <div class="bg-background p-4">
           <div class="border-border flex justify-between border-b pb-2">
             <span>{{ project.code?.filename }}</span>
-            <button class="hover:text-text cursor-pointer transition-all">
-              <Icon name="icon-park-outline:copy" class="text-xl" />
+            <button
+              class="hover:text-text cursor-pointer transition-all"
+              @click="copyCode"
+            >
+              <Icon v-if="copied" name="heroicons:check" class="text-xl" />
+              <Icon v-else name="icon-park-outline:copy" class="text-xl" />
             </button>
           </div>
           <pre class="overflow-x-auto py-4">{{ project.code?.content }}</pre>
