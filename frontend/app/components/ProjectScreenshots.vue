@@ -44,18 +44,20 @@ watch(emblaApi, (api) => {
     <h2 class="text-text font-heading mb-4 text-2xl font-bold">Screenshots</h2>
 
     <div class="group relative">
-      <div ref="emblaRef" class="border-border overflow-hidden border">
-        <div class="flex">
-          <div
-            v-for="image in images"
-            :key="image.src"
-            class="min-w-0 flex-[0_0_100%]"
-          >
-            <img
-              :src="image.src"
-              :alt="image.alt"
-              class="aspect-video w-full object-cover"
-            />
+      <div class="border-border bg-surface overflow-hidden rounded-md border">
+        <div ref="emblaRef" class="overflow-hidden">
+          <div class="flex">
+            <div
+              v-for="image in images"
+              :key="image.src"
+              class="flex min-w-0 flex-[0_0_100%] justify-center"
+            >
+              <img
+                :src="image.src"
+                :alt="image.alt"
+                class="max-h-175 w-auto"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -66,6 +68,7 @@ watch(emblaApi, (api) => {
       >
         <Icon name="heroicons:chevron-left" />
       </button>
+
       <button
         class="border-border bg-background/80 text-text absolute top-1/2 right-4 hidden h-8 w-8 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border backdrop-blur-md transition group-hover:flex"
         @click="scrollNext"
@@ -87,7 +90,7 @@ watch(emblaApi, (api) => {
         <img
           :src="image.src"
           :alt="image.alt"
-          class="h-9 w-16 object-cover text-xs"
+          class="h-14 w-14 object-cover text-xs"
         />
       </button>
     </div>

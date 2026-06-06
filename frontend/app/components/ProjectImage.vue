@@ -6,11 +6,13 @@ const props = defineProps<{ project: ProjectsCollectionItem }>();
 </script>
 
 <template>
-  <div class="border-border border-b pb-12">
+  <div
+    class="border-border bg-surface flex justify-center overflow-hidden rounded-md border"
+  >
     <img
       :src="project.cover.src"
       :alt="project.cover.alt"
-      class="bg-surface aspect-video w-full"
+      class="max-h-175 w-auto"
     />
   </div>
 </template>
