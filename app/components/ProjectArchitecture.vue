@@ -1,8 +1,15 @@
 <script setup lang="ts">
 import type { Collections } from "@nuxt/content";
+import { codeToHtml } from "shiki";
+
 type ProjectsCollectionItem = Collections["projects"];
 
 const props = defineProps<{ project: ProjectsCollectionItem }>();
+
+const highlighted = await codeToHtml(props.project.code?.content ?? "", {
+  lang: props.project.code?.language ?? "text",
+  theme: "dark-plus",
+});
 
 const copied = ref(false);
 
@@ -47,9 +54,18 @@ const copyCode = () => {
               <Icon v-else name="icon-park-outline:copy" class="text-xl" />
             </button>
           </div>
-          <pre class="overflow-x-auto py-4">{{ project.code?.content }}</pre>
+          <div
+            class="code-block overflow-x-auto rounded-none py-4"
+            v-html="highlighted"
+          />
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<style scoped>
+.code-block :deep(.shiki) {
+  background-color: var(--bg-background) !important;
+}
+</style>
