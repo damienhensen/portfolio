@@ -1,7 +1,7 @@
 ---
 title: Building My Portfolio with Nuxt Content
 description: The story behind this portfolio, from choosing the tech stack to refining the design and structure.
-date: 2026-06-05 00:22
+date: "2026-06-05T00:22:00+02:00"
 tags:
   - Nuxt
   - Portfolio

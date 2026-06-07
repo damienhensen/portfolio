@@ -56,6 +56,7 @@ useHead({
         author: {
           "@type": "Person",
           name: "Damien Hensen",
+          url: "https://damienhensen.nl/about"
         },
         programmingLanguage: project.value?.tags,
       }),

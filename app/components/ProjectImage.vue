@@ -19,6 +19,7 @@ const props = defineProps<{ project: ProjectsCollectionItem }>();
           ? '323px'
           : '(max-width: 768px) 100vw, 1244px'
       "
+      fetchpriority="high"
       class="max-h-175 w-auto"
       format="webp"
     />
