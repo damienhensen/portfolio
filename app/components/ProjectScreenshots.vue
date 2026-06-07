@@ -55,6 +55,11 @@ watch(emblaApi, (api) => {
               <NuxtImg
                 :src="image.src"
                 :alt="image.alt"
+                :sizes="
+                  image.type === 'mobile'
+                    ? '323px'
+                    : '(max-width: 768px) 100vw, 1244px'
+                "
                 class="max-h-175 w-auto"
                 format="webp"
                 loading="lazy"

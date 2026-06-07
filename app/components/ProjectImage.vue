@@ -12,6 +12,9 @@ const props = defineProps<{ project: ProjectsCollectionItem }>();
     <NuxtImg
       :src="project.cover.src"
       :alt="project.cover.alt"
+      :sizes="
+        project.cover.type === 'mobile' ? '323px' : '(max-width: 768px) 100vw, 1244px'
+      "
       class="max-h-175 w-auto"
       format="webp"
       loading="lazy"

@@ -23,6 +23,7 @@ demo:
 cover:
   src: /images/projects/fixmycity/feed.png
   alt: FixMyCity issue reporting dashboard
+  type: desktop
 
 problem:
   title: The Problem
@@ -85,18 +86,23 @@ code:
 screenshots:
   - src: /images/projects/fixmycity/home.png
     alt: FixMyCity landing page
+    type: desktop
 
   - src: /images/projects/fixmycity/feed.png
     alt: Issue feed with filtering and status tracking
+    type: desktop
 
   - src: /images/projects/fixmycity/map.png
     alt: Interactive map showing issue locations
+    type: desktop
 
   - src: /images/projects/fixmycity/profile.png
     alt: User profile and submitted reports
+    type: desktop
 
   - src: /images/projects/fixmycity/admin.png
     alt: Administrative issue management dashboard
+    type: desktop
 
 technicalAnalysis:
   title: Technical Analysis

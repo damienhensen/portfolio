@@ -47,6 +47,7 @@ export default defineContentConfig({
         cover: z.object({
           src: z.string(),
           alt: z.string(),
+          type: z.string(),
         }),
 
         problem: sectionWithPointsSchema(),
@@ -71,6 +72,7 @@ export default defineContentConfig({
             z.object({
               src: z.string(),
               alt: z.string(),
+              type: z.string(),
             }),
           )
           .default([]),

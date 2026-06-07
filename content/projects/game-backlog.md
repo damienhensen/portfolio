@@ -23,6 +23,7 @@ demo:
 cover:
   src: /images/projects/gamebacklog/home.jpg
   alt: Game Backlog application overview
+  type: mobile
 
 problem:
   title: The Problem
@@ -69,15 +70,19 @@ code:
 screenshots:
   - src: /images/projects/gamebacklog/home.jpg
     alt: Game Backlog overview showing tracked games
+    type: mobile
 
   - src: /images/projects/gamebacklog/create.jpg
     alt: Creating a new game with play and ownership status
+    type: mobile
 
   - src: /images/projects/gamebacklog/detail.jpg
     alt: Game detail page with automatically enriched metadata
+    type: mobile
 
   - src: /images/projects/gamebacklog/edit.jpg
     alt: Editing an existing game using the management interface
+    type: mobile
 
 technicalAnalysis:
   title: Technical Analysis

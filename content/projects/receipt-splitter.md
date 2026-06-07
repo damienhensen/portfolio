@@ -23,6 +23,7 @@ demo:
 cover:
   src: /images/projects/receiptsplitter/dashboard.jpg
   alt: Receipt Splitter dashboard showing open settlements and bill summaries
+  type: mobile
 
 problem:
   title: The Problem
@@ -78,18 +79,23 @@ code:
 screenshots:
   - src: /images/projects/receiptsplitter/dashboard.jpg
     alt: Dashboard showing open settlements, latest draft bills, and the largest outstanding shared expenses
+    type: mobile
 
   - src: /images/projects/receiptsplitter/settled.jpg
     alt: Bills overview organized into draft, open, and settled categories
+    type: mobile
 
   - src: /images/projects/receiptsplitter/bill-draft.jpg
     alt: Bill creation screen with participants and imported expenses ready for review before finalization
+    type: mobile
 
   - src: /images/projects/receiptsplitter/bill.jpg
     alt: Bill detail page displaying participants, expenses, payers, and remaining outstanding balances
+    type: mobile
 
   - src: /images/projects/receiptsplitter/debtors.jpg
     alt: Debtors overview aggregating outstanding balances across multiple bills for each participant
+    type: mobile
 
 technicalAnalysis:
   title: Technical Analysis
