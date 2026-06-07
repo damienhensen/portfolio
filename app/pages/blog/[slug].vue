@@ -11,8 +11,14 @@ useHead({
 });
 
 // Blog data
-const { data: post } = await useAsyncData(() =>
-  queryCollection("blog").path(route.path).first(),
+const contentPath = computed(() =>
+  route.path !== "/" && route.path.endsWith("/")
+    ? route.path.slice(0, -1)
+    : route.path,
+);
+
+const { data: post } = await useAsyncData(`blog-${contentPath.value}`, () =>
+  queryCollection("blog").path(contentPath.value).first(),
 );
 
 const formattedDate = computed(() => formatDate(post.value?.date ?? ""));

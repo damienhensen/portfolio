@@ -10,9 +10,15 @@ useHead({
   ],
 });
 
-// Project data
-const { data: project } = await useAsyncData(() =>
-  queryCollection("projects").path(route.path).first(),
+const contentPath = computed(() =>
+  route.path !== "/" && route.path.endsWith("/")
+    ? route.path.slice(0, -1)
+    : route.path,
+);
+
+const { data: project } = await useAsyncData(
+  `project-${contentPath.value}`,
+  () => queryCollection("projects").path(contentPath.value).first(),
 );
 
 // SEO
