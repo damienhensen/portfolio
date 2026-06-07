@@ -21,6 +21,13 @@ const { data: post } = await useAsyncData(`blog-${contentPath.value}`, () =>
   queryCollection("blog").path(contentPath.value).first(),
 );
 
+if (!post.value) {
+  throw createError({
+    status: 404,
+    statusText: "Page Not Found",
+  });
+}
+
 const formattedDate = computed(() => formatDate(post.value?.date ?? ""));
 
 const readingTime = computed(() =>
@@ -95,6 +102,7 @@ useHead({
         author: {
           "@type": "Person",
           name: "Damien Hensen",
+          url: "https://damienhensen.nl/about/",
         },
         mainEntityOfPage: `https://damienhensen.nl${route.path}`,
       }),
