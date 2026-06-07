@@ -10,6 +10,7 @@ useHead({
   ],
 });
 
+// Project data
 const contentPath = computed(() =>
   route.path !== "/" && route.path.endsWith("/")
     ? route.path.slice(0, -1)

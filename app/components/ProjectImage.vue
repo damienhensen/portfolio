@@ -12,12 +12,15 @@ const props = defineProps<{ project: ProjectsCollectionItem }>();
     <NuxtImg
       :src="project.cover.src"
       :alt="project.cover.alt"
+      :width="project.cover.type === 'mobile' ? 323 : 1244"
+      :height="700"
       :sizes="
-        project.cover.type === 'mobile' ? '323px' : '(max-width: 768px) 100vw, 1244px'
+        project.cover.type === 'mobile'
+          ? '323px'
+          : '(max-width: 768px) 100vw, 1244px'
       "
       class="max-h-175 w-auto"
       format="webp"
-      loading="lazy"
     />
   </div>
 </template>

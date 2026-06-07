@@ -48,13 +48,15 @@ watch(emblaApi, (api) => {
         <div ref="emblaRef" class="overflow-hidden">
           <div class="flex">
             <div
-              v-for="image in images"
+              v-for="(image, idx) in images"
               :key="image.src"
               class="flex min-w-0 flex-[0_0_100%] justify-center"
             >
               <NuxtImg
                 :src="image.src"
                 :alt="image.alt"
+                :width="image.type === 'mobile' ? 323 : 1244"
+                :height="700"
                 :sizes="
                   image.type === 'mobile'
                     ? '323px'
@@ -62,7 +64,7 @@ watch(emblaApi, (api) => {
                 "
                 class="max-h-175 w-auto"
                 format="webp"
-                loading="lazy"
+                :loading="idx == 0 ? 'eager' : 'lazy'"
               />
             </div>
           </div>
