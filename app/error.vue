@@ -10,7 +10,7 @@ clearError;
 
 <template>
   <main
-    class="bg-background text-text container flex min-h-screen items-center justify-center py-24"
+    class="bg-background text-text flex min-h-screen items-center justify-center p-24"
   >
     <div class="mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
       <p class="font-heading text-xs font-medium uppercase">
