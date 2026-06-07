@@ -26,7 +26,7 @@ const normalProjects = computed(() =>
         <p>Some of the projects I'm most proud of.</p>
       </div>
       <NuxtLink
-        to="/projects"
+        to="/projects/"
         class="hover:text-text flex items-center gap-2 self-end font-medium uppercase transition-all"
         >View all projects <Icon name="heroicons:arrow-right" class="text-lg"
       /></NuxtLink>

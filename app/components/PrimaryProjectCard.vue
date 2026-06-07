@@ -20,7 +20,7 @@ const props = defineProps<{ project: ProjectsCollectionItem }>();
       </div>
       <div class="flex">
         <NuxtLink
-          :to="project?.path"
+          :to="`${project?.path}/`"
           class="bg-text text-background border-text block border-2 px-12 py-4 font-medium"
           >View Details</NuxtLink
         >

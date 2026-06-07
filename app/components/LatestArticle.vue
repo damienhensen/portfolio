@@ -8,7 +8,7 @@ const formattedDate = computed(() => formatDate(props.post.date));
 </script>
 
 <template>
-  <NuxtLink :to="post.path">
+  <NuxtLink :to="`${post.path}/`">
     <article class="flex flex-col gap-2">
       <div class="flex flex-col">
         <span class="font-heading font-medium uppercase">{{

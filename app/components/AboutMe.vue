@@ -27,7 +27,7 @@
           </div>
           <div class="flex">
             <NuxtLink
-              to="/about"
+              to="/about/"
               class="bg-text text-background border-text block border-2 px-8 py-3 font-medium"
               >Learn more about me</NuxtLink
             >

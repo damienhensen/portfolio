@@ -13,7 +13,7 @@ const readingTime = computed(() =>
 
 <template>
   <NuxtLink
-    :to="post.path"
+    :to="`${post.path}/`"
     class="border-border bg-surface rounded border p-8 md:rounded-none md:border-0 md:border-t md:bg-transparent md:px-0 md:py-12"
   >
     <article
