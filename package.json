@@ -4,9 +4,10 @@
   "type": "module",
   "scripts": {
     "generate:rss": "tsx scripts/generate-rss.ts",
+    "generate:sitemap": "tsx scripts/generate-sitemap.ts",
     "dev": "nuxt dev",
-    "build": "npm run generate:rss && nuxt build",
-    "generate": "npm run generate:rss && nuxt generate",
+    "build": "npm run generate:rss && npm run generate:sitemap && nuxt build",
+    "generate": "npm run generate:rss && npm run generate:sitemap && nuxt generate",
     "preview": "nuxt preview"
   },
   "dependencies": {

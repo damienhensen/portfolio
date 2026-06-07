@@ -6,6 +6,8 @@ description: A full-stack issue reporting platform for municipalities, built wit
 
 type: School Assignment
 
+date: 2026-06-05 23:16
+
 tags:
   - Vue
   - Spring Boot

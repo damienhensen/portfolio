@@ -6,6 +6,8 @@ description: A full-stack game backlog application built with Flutter and Larave
 
 type: School Assignment
 
+date: 2026-06-06 15:08
+
 tags:
   - Flutter
   - Dart

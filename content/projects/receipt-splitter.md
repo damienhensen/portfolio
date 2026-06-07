@@ -6,6 +6,8 @@ description: A Flutter mobile application for scanning receipts, creating shared
 
 type: School Assignment
 
+date: 2026-06-06 19:11
+
 tags:
   - Flutter
   - Dart
