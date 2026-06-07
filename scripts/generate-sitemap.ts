@@ -14,10 +14,10 @@ type Route = {
 };
 
 const routes: Route[] = [
-  { loc: "", changeFreq: "monthly", priority: "1.0" },
-  { loc: "/about", changeFreq: "monthly", priority: "0.8" },
-  { loc: "/blog", changeFreq: "monthly", priority: "0.9" },
-  { loc: "/projects", changeFreq: "monthly", priority: "0.9" },
+  { loc: "/", changeFreq: "monthly", priority: "1.0" },
+  { loc: "/about/", changeFreq: "monthly", priority: "0.8" },
+  { loc: "/blog/", changeFreq: "monthly", priority: "0.9" },
+  { loc: "/projects/", changeFreq: "monthly", priority: "0.9" },
 ];
 
 const blogDir = "content/blog";
@@ -34,7 +34,7 @@ await Promise.all([
     const slug = path.basename(file, ".md");
 
     routes.push({
-      loc: `/blog/${slug}`,
+      loc: `/blog/${slug}/`,
       changeFreq: "monthly",
       lastMod: data.updated ?? data.date,
       priority: "0.7",
@@ -47,7 +47,7 @@ await Promise.all([
     const slug = path.basename(file, ".md");
 
     routes.push({
-      loc: `/projects/${slug}`,
+      loc: `/projects/${slug}/`,
       changeFreq: "monthly",
       lastMod: data.updated ?? data.date,
       priority: "0.8",
