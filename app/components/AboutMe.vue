@@ -4,10 +4,14 @@
       <div
         class="bg-surface border-border mx-auto flex flex-col items-center gap-4 rounded border lg:flex-row lg:gap-12"
       >
-        <img
+        <NuxtImg
           src="/images/damien.jpg"
-          alt="Damien Hensen"
           class="bg-background mt-8 w-70 shrink-0 rounded-l rounded-r-full object-cover lg:m-4"
+          alt="Damien Hensen"
+          width="280"
+          height="280"
+          loading="lazy"
+          format="webp"
         />
         <div class="max-w-2xl p-8">
           <h2 class="text-text font-heading mb-2 text-2xl font-bold">

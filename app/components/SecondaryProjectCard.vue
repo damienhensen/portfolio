@@ -8,9 +8,13 @@ const props = defineProps<{ project: ProjectsCollectionItem }>();
 <template>
   <div class="border-border bg-surface group flex flex-col rounded border">
     <div class="relative h-60 overflow-hidden rounded-t">
-      <div
-        class="absolute inset-0 bg-cover bg-center"
-        :style="{ backgroundImage: `url(${project.cover.src})` }"
+      <NuxtImg
+        :src="project.cover.src"
+        :alt="project.cover.alt"
+        class="absolute inset-0 h-full w-full object-cover"
+        sizes="400px"
+        format="webp"
+        preload
       />
 
       <div

@@ -52,10 +52,12 @@ watch(emblaApi, (api) => {
               :key="image.src"
               class="flex min-w-0 flex-[0_0_100%] justify-center"
             >
-              <img
+              <NuxtImg
                 :src="image.src"
                 :alt="image.alt"
                 class="max-h-175 w-auto"
+                format="webp"
+                loading="lazy"
               />
             </div>
           </div>
@@ -87,10 +89,14 @@ watch(emblaApi, (api) => {
           selectedIndex === index ? 'opacity-100' : 'opacity-40',
         ]"
       >
-        <img
+        <NuxtImg
           :src="image.src"
           :alt="image.alt"
+          width="56"
+          height="56"
           class="h-14 w-14 object-cover text-xs"
+          format="webp"
+          loading="lazy"
         />
       </button>
     </div>

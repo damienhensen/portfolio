@@ -9,10 +9,12 @@ const props = defineProps<{ project: ProjectsCollectionItem }>();
   <div
     class="border-border bg-surface flex justify-center overflow-hidden rounded-md border"
   >
-    <img
+    <NuxtImg
       :src="project.cover.src"
       :alt="project.cover.alt"
       class="max-h-175 w-auto"
+      format="webp"
+      loading="lazy"
     />
   </div>
 </template>

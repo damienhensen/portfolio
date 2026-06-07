@@ -1,6 +1,6 @@
 <template>
   <section class="py-12 lg:pt-24">
-    <div class="flex flex-col md:flex-row">
+    <div class="flex flex-col gap-6 md:flex-row">
       <div class="flex flex-1 flex-col gap-6">
         <div class="flex flex-col gap-2">
           <p class="font-heading text-xs font-medium uppercase">All About</p>
@@ -24,10 +24,13 @@
         </p>
       </div>
       <div class="flex-1">
-        <img
+        <NuxtImg
           src="/images/damien.jpg"
+          class="bg-background border-border mx-auto shrink-0 rounded-lg border object-cover"
           alt="Damien Hensen"
-          class="bg-background mx-auto shrink-0 object-cover rounded-lg border border-border"
+          width="325"
+          height="325"
+          format="webp"
         />
       </div>
     </div>

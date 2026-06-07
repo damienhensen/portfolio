@@ -7,7 +7,7 @@ const props = defineProps<{ project: ProjectsCollectionItem }>();
 
 <template>
   <div
-    class="border-border bg-surface flex flex-col rounded border md:flex-row group"
+    class="border-border bg-surface group flex flex-col rounded border md:flex-row"
   >
     <div class="order-2 flex-1 p-8 md:order-1">
       <Tag :tag="project?.type" :tiny="true" />
@@ -27,14 +27,20 @@ const props = defineProps<{ project: ProjectsCollectionItem }>();
       </div>
     </div>
     <div
-      class="relative order-1 h-60 overflow-hidden md:order-2 md:h-auto md:w-2/5 rounded-r"
+      class="relative order-1 h-60 overflow-hidden rounded-r md:order-2 md:h-auto md:w-2/5"
     >
-      <div
-        class="absolute inset-0 bg-cover bg-center"
-        :style="{ backgroundImage: `url(${project.cover.src})` }"
+      <NuxtImg
+        :src="project.cover.src"
+        :alt="project.cover.alt"
+        class="absolute inset-0 h-full w-full object-cover"
+        sizes="(max-width: 768px) 100vw, 40vw"
+        format="webp"
+        preload
       />
 
-      <div class="absolute inset-0 bg-background/30 group-hover:bg-background/10 transition" />
+      <div
+        class="bg-background/30 group-hover:bg-background/10 absolute inset-0 transition"
+      />
     </div>
   </div>
 </template>
